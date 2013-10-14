@@ -1,0 +1,6 @@
+create keyspace perf_test with
+  placement_strategy = 'org.apache.cassandra.locator.SimpleStrategy' AND
+  strategy_options = {replication_factor:1};
+use perf_test;
+create column family big_row with comparator = 'UTF8Type';
+create column family many_keys with comparator = 'UTF8Type';
